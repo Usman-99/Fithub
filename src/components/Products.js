@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 export default function Products() {
   return (
     <>
-      <section id="man" className="">
+      <section id="man" className="mt-2">
         <div className="app">
           <h1>GYM STORE</h1>
           {card.length > 0 ? (

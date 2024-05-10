@@ -3,7 +3,7 @@ import team from "../Images/team.jpg";
 import data from "./Teamdata";
 export default function Team() {
   return (
-    <div className="w3-container mb-5" id="team">
+    <div className="w3-container mt-5 mb-5" id="team">
       <h3 className="mb-5 w3-center w3-xlarge">
         <b>THE TEAM</b>
       </h3>

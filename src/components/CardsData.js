@@ -12,19 +12,19 @@ const manCardsData = [
   },
   {
     category: "Man",
-    title: "LifeStyle Home Gym",
+    title: "LifeStyle HomeGym",
     img: gym2,
     price: 85000,
   },
   {
     category: "Man",
-    title: "Tread mill",
+    title: "Treadmill",
     img: gym3,
     price: 20000,
   },
   {
     category: "Man",
-    title: "Weight Loss Bike",
+    title: "Weightloss Bike",
     img: gym4,
     price: 18000,
   },

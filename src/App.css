@@ -4,6 +4,7 @@ body{height: 100%;
   background-position: center;
   background-size: 100vh;
   position: relative;
+
 margin: 0;
 padding: 0;}
         h1,
@@ -58,4 +59,10 @@ img{
 	border-radius: 12px;
 	background-color: #0797b0;
 	overflow: hidden;
+}
+@media (max-width: 650px) {
+  .img-fluid {
+    height: 170px;
+    zoom: 3;
+  }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import web from "../Images/webpic.JPG";
+import web from "../Images/web2.jpg";
 import { Link } from "react-router-dom";
 import team from "../Images/team.jpg";
 
@@ -10,7 +10,7 @@ export default function Webimg() {
         <div className="webimg">
           <p style={{ textAlign: "justify" }}>
             <Link to="/Products">
-              <img 
+              <img
                 className="img-fluid"
                 title="Join And Avail Discount on your first purchase!!"
                 src={web}
