@@ -62,7 +62,6 @@ h1 {
 .container {
     width: 100%;
     margin-top: 3rem;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -139,7 +138,7 @@ h1 {
 
 .product:hover div:nth-of-type(2) {
     height: 100%;
-    opacity: 0.3;
+    
 }
 
 .product:hover div:nth-of-type(3) {

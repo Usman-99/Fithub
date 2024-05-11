@@ -1,5 +1,4 @@
 import map from "../Images/map.jpg";
-
 export default function Contact() {
   return (
     <div className="mt-5 w3-container w3-light-grey" id="contact">
@@ -16,7 +15,7 @@ export default function Contact() {
           Phone: +92 33151515
         </p>
         <a
-          href="mailto:usmancis99@gmail.com"
+          href="mailto:usmanyousuf1137@gmail.com"
           className="text-decoration-none text-black"
         >
           <p>

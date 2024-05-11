@@ -1,7 +1,19 @@
-import React from "react";
+import { useState } from "react";
 import blog1 from "../Images/blog-1.jpg";
+import reply from "../Images/team.jpg";
 
 export default function Blog() {
+  const [showComments, setShowComments] = useState(false);
+  const [likeClicked, setLikeClicked] = useState(false);
+
+  const toggleComments = () => {
+    setShowComments(!showComments);
+  };
+
+  const handleLike = () => {
+    setLikeClicked(!likeClicked);
+  };
+
   return (
     <>
       <div className="mt-5 w3-container w3-white w3-margin w3-padding-large">
@@ -35,38 +47,79 @@ export default function Blog() {
             exercitation ullamco.
           </p>
           <br />
-          <p className="w3-left">
-            <button
-              className="w3-button w3-white w3-border"
-              onclick="likeFunction(this)"
-            >
-              <b>
-                <i className="fa fa-thumbs-up" /> Like
-              </b>
-            </button>
-          </p>
-          <p className="w3-right">
-            <button className="w3-button w3-black" id="myBtn">
-              <b>Replies &nbsp;</b> <span className="w3-tag w3-white">1</span>
-            </button>
-          </p>
-          <p className="w3-clear" />
-          <div
-            className="w3-row w3-margin-bottom"
-            id="demo1"
-            style={{ display: "none" }}
-          >
-            <hr />
-            <div className="w3-col l2 m3"></div>
-            <div className="w3-col l10 m9">
-              <h4>
-                George
-                <span className="w3-opacity w3-medium">
-                  May 3, 2015, 6:32 PM
-                </span>
-              </h4>
-              <p>Great blog post! Following</p>
+          <div className="blog-post">
+            <div className="mt-2">
+              <p className="w3-left">
+                <button
+                  className="w3-button w3-white w3-border"
+                  onClick={handleLike}
+                >
+                  <b>
+                    {likeClicked ? (
+                      "✓ Liked"
+                    ) : (
+                      <span>
+                        <i className="fa fa-thumbs-up"></i> Like
+                      </span>
+                    )}
+                  </b>
+                </button>
+              </p>
+              <p className="w3-right">
+                <button className="w3-button w3-black" onClick={toggleComments}>
+                  <b>Comments</b> <span className="w3-tag w3-white">2</span>
+                </button>
+              </p>
+              <p className="w3-clear"></p>
             </div>
+
+            {showComments && (
+              <div>
+                <div className="w3-row">
+                  <br />
+                  <hr />
+                  {/* Comment 1 */}
+                  <div>
+                    <div className="w3-col l2 m3">
+                      <img src={reply} alt="Avatar" style={{ width: "90px" }} />
+                    </div>
+                    <div className="w3-col l10 m9">
+                      <h4 className="bg-light mb-1">
+                        <b>
+                          Amber&nbsp;
+                          <span className="w3-opacity w3-medium mx-1">
+                            December 26, 2022, 10:52 PM
+                          </span>
+                        </b>
+                      </h4>
+                      <p>
+                        Love your blog page! Simply the best! Lorem ipsum dolor
+                        sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* Comment 2 */}
+                <div className="w3-row mt-3">
+                  <div className="w3-col l2 m3">
+                    <img src={reply} alt="Avatar" style={{ width: "90px" }} />
+                  </div>
+                  <div className="w3-col l10 m9">
+                    <h4 className="bg-light mb-1">
+                      <b>
+                        {" "}
+                        Angie&nbsp;
+                        <span className="w3-opacity w3-medium mx-1">
+                          January 7, 2023, 9:12 PM
+                        </span>
+                      </b>
+                    </h4>
+                    <p>I Love your blogs!!</p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

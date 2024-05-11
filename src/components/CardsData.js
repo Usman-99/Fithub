@@ -1,56 +1,68 @@
 import gym1 from "../Images/gym1.jpg";
 import gym2 from "../Images/gym2.jpg";
 import gym3 from "../Images/gym3.jpg";
-import gym4 from "../Images/gym4.png";
+import gym4 from "../Images/gym4.jpg";
+import gym5 from "../Images/gym5.jpg";
+import gym6 from "../Images/gym6.jpg";
+import gym7 from "../Images/gym7.jpg";
+import gym8 from "../Images/gym8.jpg";
 
 const manCardsData = [
   {
-    category: "Man",
+    category: "Gym",
     title: "Weights",
     img: gym1,
     price: 5000,
+    id: 1,
   },
   {
-    category: "Man",
+    category: "Gym",
     title: "LifeStyle HomeGym",
     img: gym2,
     price: 85000,
+    id: 2,
   },
   {
-    category: "Man",
+    category: "Gym",
     title: "Treadmill",
     img: gym3,
     price: 20000,
+    id: 3,
   },
   {
-    category: "Man",
-    title: "Weightloss Bike",
+    category: "Gym",
+    title: "Protein Powder",
     img: gym4,
-    price: 18000,
+    price: 1800,
+    id: 4,
   },
   {
-    category: "Man",
-    title: "UniqueBLUE",
-    img: "https://via.placeholder.com/400",
+    category: "Gym",
+    title: "Gym Mat",
+    img: gym5,
     price: 1700,
+    id: 5,
   },
   {
-    category: "Man",
-    title: "UniqueWHITE",
-    img: "https://via.placeholder.com/400",
-    price: 2000,
+    category: "Gym",
+    title: "Kettlebell",
+    img: gym6,
+    price: 4000,
+    id: 6,
   },
   {
-    category: "Man",
-    title: "OrientNEW",
-    img: "https://via.placeholder.com/400",
-    price: 1300,
+    category: "Gym",
+    title: "Hand Presser",
+    img: gym7,
+    price: 1600,
+    id: 7,
   },
   {
-    category: "Man",
-    title: "RustBLACK",
-    img: "https://via.placeholder.com/400",
-    price: 1200,
+    category: "Gym",
+    title: "Punching Bag",
+    img: gym8,
+    price: 6000,
+    id: 8,
   },
 ];
 

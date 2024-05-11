@@ -15,7 +15,6 @@ export default function Navbar() {
     { name: "BLOGS", tag: "/Blog", icon: "comment-alt" },
     { name: "CONTACT", tag: "/Contact", icon: "envelope" },
     { name: "PRODUCTS", tag: "/Products", icon: "shopping-basket" },
-    { name: "MY ACCOUNT", tag: "/Account", icon: "user" },
   ];
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);

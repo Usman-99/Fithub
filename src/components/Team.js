@@ -1,5 +1,5 @@
 import React from "react";
-import team from "../Images/team.jpg";
+import team from "../Images/passportpic.png";
 import data from "./Teamdata";
 export default function Team() {
   return (
@@ -13,11 +13,16 @@ export default function Team() {
       {data.length > 0 && (
         <div>
           {data.map((member, index) => (
-            <div className="w3-grayscale" style={{ marginTop: 64 }}>
+            <div className="" style={{ marginTop: 64 }}>
               <div className="w3-col l3 m6 w3-margin-bottom">
-                <div className="mx-2 border border-secondary w3-card px-2">
-                  <img src={team} alt={member.name} style={{ width: "100%" }} />
-                  <div className="w3-container">
+                <div className="mx-2 border border-secondary w3-card rounded-lg">
+                  <img
+                    src={team}
+                    alt={member.name}
+                    style={{ width: "100%" }}
+                    className="w3-hover-opacity px-1 rounded-lg"
+                  />
+                  <div className="w3-container w3-grayscale">
                     <div>
                       <br />
                       <h4>

@@ -60,9 +60,24 @@ img{
 	background-color: #0797b0;
 	overflow: hidden;
 }
+
 @media (max-width: 650px) {
   .img-fluid {
     height: 170px;
     zoom: 3;
+  }
+}
+
+@media (min-width: 651px) {
+  .img-fluid {
+    height: 700px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .screen {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 10%;
   }
 }
