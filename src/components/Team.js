@@ -1,5 +1,5 @@
 import React from "react";
-import team from "../Images/passportpic.png";
+import team from "../Images/pic.jpeg";
 import data from "./Teamdata";
 export default function Team() {
   return (
