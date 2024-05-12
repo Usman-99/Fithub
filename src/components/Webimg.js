@@ -1,7 +1,7 @@
 import React from "react";
 import web from "../Images/web2.jpg";
 import { Link } from "react-router-dom";
-import team from "../Images/team.jpg";
+import team from "../Images/pic.jpeg";
 
 export default function Webimg() {
   return (
