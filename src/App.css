@@ -1,6 +1,6 @@
 body{height: 100%;
   width: 100%;
-  background-image: linear-gradient(rgba(241, 243, 243, 0.964),rgba(232, 243, 244, 0.945)),url("./Images/back.jpg");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.964),rgba(227, 225, 225, 0.965)),url("./Images/back.png");
   background-position: center;
   background-size: 100vh;
   position: relative;
@@ -13,7 +13,7 @@ padding: 0;}
         h6 {
           color: white;
             font-family: "Raleway", sans-serif;
-            background-color: cornflowerblue;
+            background-color:orangered;
             padding: 10px 3px 10px 3px;
         }
      
@@ -47,19 +47,7 @@ h2{
 img{
   cursor: pointer;
 }
-.shopping-cart-btn {
-	color: #fff;
-	display: flex;
-}
 
-.product-count {
-	margin-top: -5px;
-	width: 20px;
-	height: 20px;
-	border-radius: 12px;
-	background-color: #0797b0;
-	overflow: hidden;
-}
 
 @media (max-width: 650px) {
   .img-fluid {
@@ -70,14 +58,41 @@ img{
 
 @media (min-width: 651px) {
   .img-fluid {
-    height: 700px;
+    height: 600px;
     width: 100%;
   }
 }
 
-@media (max-width: 650px) {
-  .screen {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-bottom: 10%;
-  }
+
+.center-recorder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-recorder span {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.audio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.audio-element {
+  margin-top: 30px; 
+}
+
+
+.btn a {
+  color: white; 
+  text-decoration: none;
+  display: inline-block;
+  width: 100%; 
+}
+.bttn{
+  display: inline-block;
+  width: 100%;
 }
