@@ -22,10 +22,10 @@ function SignUpPage() {
         });
       }
       console.log("User successfully logged in", { user });
-      toast.success("User Logged in successfully", { position: "top-center" });
+      toast.success("User Logged in successfully");
     } catch (error) {
       console.log(error.message);
-      toast.error("error.message", { position: "bottom-center" });
+      toast.error(error.message);
     }
   };
   return (

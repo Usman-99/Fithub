@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Glogo from "../Images/googlelogo.png";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Firebase/firebase";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 import { useState } from "react";
 
 function LoginPage() {
@@ -14,10 +14,10 @@ function LoginPage() {
       await signInWithEmailAndPassword(auth, email, password);
       console.log("user log in");
       window.location.href = "/";
-      toast.success("User Logged in successfully", { position: "top-center" });
+      toast.success("User Logged in successfully");
     } catch (error) {
       console.log(error.message);
-      toast.error("error.message", { position: "bottom-center" });
+      toast.error(error.message);
     }
   };
 
@@ -25,7 +25,7 @@ function LoginPage() {
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-md rounded-xl">
         <h2 className="text-2xl font-bold text-center text-gray-800">Login</h2>
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleLogin}>
           <div>
             <label
               htmlFor="email"
