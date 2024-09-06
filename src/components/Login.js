@@ -1,6 +1,26 @@
 import { Link } from "react-router-dom";
+import Glogo from "../Images/googlelogo.png";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../Firebase/firebase";
+import { toast } from "react-toastify";
+import { useState } from "react";
 
 function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      console.log("user log in");
+      window.location.href = "/";
+      toast.success("User Logged in successfully", { position: "top-center" });
+    } catch (error) {
+      console.log(error.message);
+      toast.error("error.message", { position: "bottom-center" });
+    }
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-md rounded-xl">
@@ -17,7 +37,10 @@ function LoginPage() {
               id="email"
               name="email"
               type="email"
+              value={email}
               required
+              onChange={(e) => setEmail(e.target.value)}
+              autoComplete="off"
               className="w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
@@ -32,6 +55,11 @@ function LoginPage() {
               id="password"
               name="password"
               type="password"
+              autoComplete="off"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
               required
               className="w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
             />
@@ -48,8 +76,9 @@ function LoginPage() {
 
         {/* Continue with Google */}
         <div className="text-center mt-6">
-          <p className="text-sm text-gray-600">or continue with</p>
-          <button className="mt-4 w-full px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+          <p className="text-sm text-gray-600">or </p>
+          <button className="mt-4 w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+            <img src={Glogo} alt="Google Logo" className="w-5 h-5 mr-3"></img>
             Continue with Google
           </button>
         </div>

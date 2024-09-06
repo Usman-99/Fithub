@@ -18,10 +18,10 @@ function App() {
     <StoreProvider>
       <Router>
         <Navbar />
-        <SignUpPage />
-        <LoginPage />
         <Routes>
           <Route path="/" element={<Webimg />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/About" element={<About />} />
           <Route path="/Team" element={<Team />} />
           <Route path="/Contact" element={<Contact />} />
