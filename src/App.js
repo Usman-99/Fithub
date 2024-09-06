@@ -10,11 +10,16 @@ import Blog from "./components/Blog";
 import Cart from "./components/Cart";
 import Navbar from "./components/navbar";
 import StoreProvider from "./Context and Reduce/StoreContext";
+import LoginPage from "./components/Login";
+import SignUpPage from "./components/Signup";
+
 function App() {
   return (
     <StoreProvider>
       <Router>
         <Navbar />
+        <SignUpPage />
+        <LoginPage />
         <Routes>
           <Route path="/" element={<Webimg />} />
           <Route path="/About" element={<About />} />
