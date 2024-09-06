@@ -1,7 +1,25 @@
 import { Link } from "react-router-dom";
 import Glogo from "../Images/googlelogo.png";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+import { auth, db } from "../Firebase/firebase";
+import { setDoc, doc } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 function SignUpPage() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleSignup = (e) => {
+    e.preventDefault();
+    try {
+      createUserWithEmailAndPassword(auth, email, password);
+      const user = auth.currentUser;
+      console.log("User successfully logged in");
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-md rounded-xl">
@@ -10,7 +28,7 @@ function SignUpPage() {
         </h2>
 
         {/* Sign-Up Form */}
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSignup}>
           <div>
             <label
               htmlFor="name"
