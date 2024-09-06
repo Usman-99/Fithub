@@ -13,8 +13,8 @@ function LoginPage() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log("user log in");
-      window.location.href = "/";
       toast.success("User Logged in successfully");
+      window.location.href = "/cart";
     } catch (error) {
       console.log(error.message);
       toast.error(error.message);

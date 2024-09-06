@@ -22,7 +22,9 @@ function SignUpPage() {
         });
       }
       console.log("User successfully logged in", { user });
-      toast.success("User Logged in successfully");
+      toast.success(
+        "Account is created successfully. Now login with that account"
+      );
     } catch (error) {
       console.log(error.message);
       toast.error(error.message);
