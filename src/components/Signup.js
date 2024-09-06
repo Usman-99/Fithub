@@ -4,20 +4,28 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { auth, db } from "../Firebase/firebase";
 import { setDoc, doc } from "firebase/firestore";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 function SignUpPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      createUserWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, email, password);
       const user = auth.currentUser;
-      console.log("User successfully logged in");
+      if (user) {
+        await setDoc(doc(db, "Users", user.uid), {
+          email: user.email,
+          name: name,
+        });
+      }
+      console.log("User successfully logged in", { user });
+      toast.success("User Logged in successfully", { position: "top-center" });
     } catch (error) {
       console.log(error.message);
+      toast.error("error.message", { position: "bottom-center" });
     }
   };
   return (
@@ -41,7 +49,7 @@ function SignUpPage() {
               name="name"
               autoComplete="off"
               type="text"
-              value={(e) => setName(e.target.value)}
+              onChange={(e) => setName(e.target.value)}
               required
               className="w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
             />
@@ -56,7 +64,7 @@ function SignUpPage() {
             <input
               id="email"
               name="email"
-              value={(e) => {
+              onChange={(e) => {
                 setEmail(e.target.value);
               }}
               type="email"
@@ -74,7 +82,7 @@ function SignUpPage() {
             </label>
             <input
               id="password"
-              value={(e) => {
+              onChange={(e) => {
                 setPassword(e.target.value);
               }}
               name="password"

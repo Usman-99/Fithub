@@ -12,7 +12,8 @@ import Navbar from "./components/navbar";
 import StoreProvider from "./Context and Reduce/StoreContext";
 import LoginPage from "./components/Login";
 import SignUpPage from "./components/Signup";
-import { ToastContainer } from "react-toastify";
+import { Toaster } from "react-hot-toast";
+
 function App() {
   return (
     <StoreProvider>
@@ -29,7 +30,7 @@ function App() {
           <Route path="/Blog" element={<Blog />} />
           <Route path="/Cart" element={<Cart />} />
         </Routes>
-        <ToastContainer />
+        <Toaster />
         <Footer className="mt-5" />
       </Router>
     </StoreProvider>
