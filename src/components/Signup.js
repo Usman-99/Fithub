@@ -41,6 +41,7 @@ function SignUpPage() {
               name="name"
               autoComplete="off"
               type="text"
+              value={(e) => setName(e.target.value)}
               required
               className="w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
             />
@@ -55,6 +56,9 @@ function SignUpPage() {
             <input
               id="email"
               name="email"
+              value={(e) => {
+                setEmail(e.target.value);
+              }}
               type="email"
               autoComplete="off"
               required
@@ -70,6 +74,9 @@ function SignUpPage() {
             </label>
             <input
               id="password"
+              value={(e) => {
+                setPassword(e.target.value);
+              }}
               name="password"
               type="password"
               autoComplete="off"
