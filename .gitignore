@@ -8,7 +8,7 @@ node_modules
 # testing
 /coverage
 #firebase
-/firebase
+/src/firebase/
 
 # production
 /build
