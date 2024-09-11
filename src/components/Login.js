@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+// src/components/LoginPage.jsx
+
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Firebase/firebase";
 import toast from "react-hot-toast";
@@ -8,15 +10,17 @@ import GoogleSignin from "./GoogleSignin";
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      console.log("user log in");
-      toast.success("User Logged in successfully");
-      window.location.href = "/cart";
+      console.log("User logged in");
+      toast.success("User logged in successfully");
+      navigate("/Products"); // Navigate to Products page
     } catch (error) {
-      console.log(error.message);
+      console.error("Login error:", error.message);
       toast.error(error.message);
     }
   };
@@ -57,9 +61,7 @@ function LoginPage() {
               type="password"
               autoComplete="off"
               value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
+              onChange={(e) => setPassword(e.target.value)}
               required
               className="w-full p-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
             />

@@ -1,4 +1,6 @@
-import { Link } from "react-router-dom";
+// src/components/SignUpPage.jsx
+
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { auth, db } from "../Firebase/firebase";
@@ -10,26 +12,34 @@ function SignUpPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      const user = auth.currentUser;
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+
       if (user) {
         await setDoc(doc(db, "Users", user.uid), {
           email: user.email,
           name: name,
         });
       }
-      console.log("User successfully logged in", { user });
-      toast.success(
-        "Account is created successfully. Now login with that account"
-      );
+
+      console.log("User successfully signed up", { user });
+      toast.success("Account created successfully. Please log in.");
+      navigate("/login"); // Redirect to login page after sign-up
     } catch (error) {
-      console.log(error.message);
+      console.error("Sign-up error:", error.message);
       toast.error(error.message);
     }
   };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white shadow-md rounded-xl">
@@ -66,9 +76,7 @@ function SignUpPage() {
             <input
               id="email"
               name="email"
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
+              onChange={(e) => setEmail(e.target.value)}
               type="email"
               autoComplete="off"
               required
@@ -84,9 +92,7 @@ function SignUpPage() {
             </label>
             <input
               id="password"
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
+              onChange={(e) => setPassword(e.target.value)}
               name="password"
               type="password"
               autoComplete="off"
