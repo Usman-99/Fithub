@@ -144,22 +144,6 @@ export default function Navbar() {
                   </div>
                 </div>
               ) : (
-                // <div className="w3-bar-item w3-hover-blue w3-dropdown-hover">
-                //   <button className="w3-button" onClick={toggleDropdown}>
-                //     <i className="fa fa-user"></i> {userName}{" "}
-                //     <i className="fa fa-caret-down"></i>
-                //   </button>
-                //   {dropdownOpen && (
-                //     <div className="w3-dropdown-content w3-bar-block w3-card-4">
-                //       <button
-                //         className="w3-bar-item w3-button w3-hover-blue"
-                //         onClick={handleLogout}
-                //       >
-                //         Logout
-                //       </button>
-                //     </div>
-                //   )}
-                // </div>
                 <button
                   className="w3-bar-item w3-button w3-hover-blue"
                   onClick={() => navigate("/login")}

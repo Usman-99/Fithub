@@ -4,6 +4,7 @@ import CartProduct from "./CartProduct";
 
 export default function Cart() {
   const { products, total } = useContext(storeContext);
+
   return (
     <div className="w-full max-w-3xl mx-auto mb-5">
       <div className="flex flex-col items-center justify-center mt-2 py-6 px-4 sm:px-10 text-xl font-medium">
@@ -15,7 +16,7 @@ export default function Cart() {
             <p className="text-center">Total: Rs {total.toFixed(2)}</p>
           </>
         ) : (
-          <h2 className="text-center mt-2 py-6">
+          <h2 style={{ marginBottom: "83%" }} className="text-center mt-2 py-6">
             No Items are added in cart!!
           </h2>
         )}
