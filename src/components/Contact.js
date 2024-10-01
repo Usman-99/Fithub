@@ -1,4 +1,5 @@
-import map from "../Images/map.jpg";
+import map from "../Images/map.webp";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 export default function Contact() {
   return (
     <div className="mt-5 w3-container w3-light-grey" id="contact">
@@ -25,7 +26,7 @@ export default function Contact() {
             Email: fithub@gmail.com
           </p>
         </a>
-        <img
+        <LazyLoadImage
           src={map}
           className="w3-image w3-greyscale"
           style={{ width: "100%", marginTop: "48px" }}

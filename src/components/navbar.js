@@ -6,6 +6,7 @@ import { auth, db } from "../Firebase/firebase"; // Firebase auth and Firestore
 import { getDoc, doc } from "firebase/firestore"; // Firestore doc fetching
 import { storeContext } from "../Context and Reduce/StoreContext";
 import toast from "react-hot-toast";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Navbar() {
   const { products } = useContext(storeContext);
@@ -72,7 +73,7 @@ export default function Navbar() {
                   navigate("/");
                 }}
               >
-                <img
+                <LazyLoadImage
                   src={logo}
                   alt="Company logo"
                   width="70"

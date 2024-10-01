@@ -1,7 +1,8 @@
 import React from "react";
-import web from "../Images/web2.jpg";
+import web from "../Images/web2.webp";
 import { Link } from "react-router-dom";
-import team from "../Images/pic.jpeg";
+import team from "../Images/pic.webp";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Webimg() {
   return (
@@ -52,7 +53,7 @@ export default function Webimg() {
           </h3>
           <div className="w3-row">
             <div className="w3-col m2 text-center">
-              <img
+              <LazyLoadImage
                 className="w3-circle"
                 src={team}
                 style={{ width: 110, height: 110 }}

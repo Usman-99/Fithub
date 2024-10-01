@@ -1,6 +1,7 @@
 import { useState } from "react";
-import blog1 from "../Images/blog-1.jpg";
+import blog1 from "../Images/blog-1.webp";
 import reply from "../Images/team.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Blog() {
   const [showComments, setShowComments] = useState(false);
@@ -24,7 +25,7 @@ export default function Blog() {
           </p>
         </div>
         <div className="w3-justify mb-3">
-          <img
+          <LazyLoadImage
             src={blog1}
             alt="Girl Hat"
             style={{ width: "70%" }}

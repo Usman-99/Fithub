@@ -1,5 +1,6 @@
 import React from "react";
-import team from "../Images/pic.jpeg";
+import team from "../Images/pic.webp";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import data from "./Teamdata";
 export default function Team() {
   return (
@@ -13,10 +14,10 @@ export default function Team() {
       {data.length > 0 && (
         <div>
           {data.map((member, index) => (
-            <div className="" style={{ marginTop: 64 }}>
+            <div key={index} className="" style={{ marginTop: 64 }}>
               <div className="w3-col l3 m6 w3-margin-bottom">
                 <div className="mx-2 border border-secondary w3-card rounded-lg">
-                  <img
+                  <LazyLoadImage
                     src={team}
                     alt={member.name}
                     style={{ width: "100%" }}
