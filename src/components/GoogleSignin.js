@@ -1,7 +1,7 @@
-import Glogo from "../Images/googlelogo.png";
-const GoogleSignin = () => {
-  return (
-    <></>
+// import Glogo from "../Images/googlelogo.png";
+// const GoogleSignin = () => {
+//   return (
+//     <></>
     // <div className="text-center mt-6">
     //   <p className="text-sm text-gray-600">or </p>
     //   <button className="mt-4 w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
@@ -9,6 +9,6 @@ const GoogleSignin = () => {
     //     Continue with Google
     //   </button>
     // </div>
-  );
-};
-export default GoogleSignin;
+//   );
+// };
+// export default GoogleSignin;
